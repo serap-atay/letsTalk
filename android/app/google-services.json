@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "579003145870",
+    "project_id": "letstalkaboutit-8d863",
+    "storage_bucket": "letstalkaboutit-8d863.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:579003145870:android:b0d7ff8f605a7b945373df",
+        "android_client_info": {
+          "package_name": "com.letstalkaboutit.letstalk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "579003145870-srb2achdujqo87c25lebhucf4buelmjc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.letstalkaboutit.letstalk",
+            "certificate_hash": "105f25c1ec8a3f385087052f1ccf4df243cd9c68"
+          }
+        },
+        {
+          "client_id": "579003145870-oteekacsa8db53sm6i2ev7uamgpneo4t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAC_TDDZerW6ctEZZQ9gxC7m0m1zV2gzfs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "579003145870-oteekacsa8db53sm6i2ev7uamgpneo4t.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "579003145870-lkcp1tjmnkb8tcjpsthnn3hi690dv72a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.letstalkaboutit.letstalk"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

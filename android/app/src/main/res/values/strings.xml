@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="facebook_app_id">640996224901699</string>
+    <string name="fb_login_protocol_scheme">fb640996224901699</string>
+    <string name="facebook_client_token">de5d78aa647fb501e3e1eb3e3c362e06</string>
+    <string name="app_name">letstalk</string>
+
+
+</resources>
