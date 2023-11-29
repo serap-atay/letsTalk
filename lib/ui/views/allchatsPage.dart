@@ -7,7 +7,7 @@ import 'package:letstalk/data/entity/chats.dart';
 import 'package:letstalk/data/entity/user.dart';
 import 'package:letstalk/ui/cubit/allChatCubit.dart';
 import 'package:letstalk/ui/views/chatPage.dart';
-import 'package:letstalk/ui/widget/messageBox.dart';
+import 'package:letstalk/ui/widget/customMessageBox.dart';
 
 class AllChatsPage extends StatefulWidget {
   final UserModel currentUser;
@@ -41,7 +41,7 @@ class _ChatsPageState extends State<AllChatsPage> {
                       itemBuilder: (context, index) {
                         var chats = list[index];
                         if (chats.ownerUserId == widget.currentUser.userId) {
-                          return GestureDetector(
+                          return InkWell(
                             onTap: () {
                               Navigator.of(context, rootNavigator: true).push(
                                   MaterialPageRoute(

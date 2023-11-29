@@ -1,8 +1,6 @@
 // ignore_for_file: file_names
 
 import 'dart:io';
-
-import 'package:letstalk/data/entity/chats.dart';
 import 'package:letstalk/data/entity/message.dart';
 import 'package:letstalk/data/entity/user.dart';
 import 'package:letstalk/data/services/authBase.dart';
@@ -88,9 +86,5 @@ class UserRepository implements AuthBase {
   Future<bool> saveMessages(Message message ) async {
     await _dbSevice.saveMessages(message);
     return true;
-  }
-
-  Future<List<Chats>> getAllChats(String userId) async {
-    return await _dbSevice.getAllChats(userId);
   }
 }

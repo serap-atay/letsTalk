@@ -9,7 +9,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:letstalk/data/entity/user.dart';
 import 'package:letstalk/ui/cubit/profileCubit.dart';
 import 'package:letstalk/ui/widget/customCardWidget.dart';
-import 'package:letstalk/ui/widget/messageBox.dart';
+import 'package:letstalk/ui/widget/customMessageBox.dart';
 
 class ProfilePage extends StatefulWidget {
   final UserModel currentUser;

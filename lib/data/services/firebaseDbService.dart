@@ -123,17 +123,4 @@ class FirebaseDbService implements DbBase {
     return list;
   }
 
-  @override
-  Future<List<Chats>> getAllChats(String userId) async {
-    var list = <Chats>[];
-    var resp = await _firebaseDb
-        .collection("chats")
-        .where("ownerUserId", isEqualTo: userId)
-        .get();
-    var docs = resp.docs;
-    for (var doc in docs) {
-      list.add(Chats.fromJson(doc.data()));
-    }
-    return list;
-  }
 }

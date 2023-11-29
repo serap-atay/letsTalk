@@ -8,7 +8,7 @@ import 'package:letstalk/ui/cubit/authCubit.dart';
 import 'package:letstalk/ui/views/allchatsPage.dart';
 import 'package:letstalk/ui/views/profilePage.dart';
 import 'package:letstalk/ui/views/usersPage.dart';
-import 'package:letstalk/ui/widget/messageBox.dart';
+import 'package:letstalk/ui/widget/customMessageBox.dart';
 
 class HomePage extends StatefulWidget {
   final UserModel currentUser;

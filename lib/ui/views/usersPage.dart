@@ -3,10 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:letstalk/data/entity/user.dart';
-import 'package:letstalk/ui/cubit/messageCubit.dart';
 import 'package:letstalk/ui/cubit/usersCubit.dart';
 import 'package:letstalk/ui/views/chatPage.dart';
-import 'package:letstalk/ui/widget/messageBox.dart';
+import 'package:letstalk/ui/widget/customMessageBox.dart';
 
 class UsersPage extends StatefulWidget {
   final UserModel currentUser;
@@ -38,13 +37,8 @@ class _UsersPageState extends State<UsersPage> {
                     itemBuilder: (context, index) {
                       var user = list[index];
                       if (user.userId != widget.currentUser.userId) {
-                        return GestureDetector(
+                        return InkWell(
                           onTap: () async {
-                            context.read<MessageCubit>().getAllMessages(
-                                widget.currentUser.userId,
-                                user.userId,
-                                widget.currentUser.userId);
-
                             Navigator.of(context, rootNavigator: true).push(
                                 MaterialPageRoute(
                                     builder: (context) => ChatPage(

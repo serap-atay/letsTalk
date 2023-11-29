@@ -4,9 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:letstalk/data/entity/message.dart';
-import 'package:letstalk/ui/cubit/allChatCubit.dart';
 import 'package:letstalk/ui/cubit/messageCubit.dart';
-import 'package:letstalk/ui/widget/messageBox.dart';
+import 'package:letstalk/ui/widget/customMessageBox.dart';
 
 class ChatPage extends StatefulWidget {
   final String userId;
@@ -35,7 +34,6 @@ class _ChatsPageState extends State<ChatPage> {
         title: const Text("Chats"),
         leading: IconButton(
             onPressed: () {
-              getAllChats();
               Navigator.of(context).pop();
             },
             icon: const Icon(Icons.arrow_back)),
@@ -185,15 +183,6 @@ class _ChatsPageState extends State<ChatPage> {
       await context
           .read<MessageCubit>()
           .getAllMessages(widget.userId, widget.receiverId, widget.userId);
-    } on PlatformException catch (e) {
-      MessageBox(
-          content: e.code, icon: Icons.error, title: "An Error Occurred").show(context);
-    }
-  }
-
-  void getAllChats() async {
-    try {
-      await context.read<AllChatCubit>().getAllChats(widget.userId);
     } on PlatformException catch (e) {
       MessageBox(
           content: e.code, icon: Icons.error, title: "An Error Occurred").show(context);

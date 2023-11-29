@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:letstalk/enums/enums.dart';
 import 'package:letstalk/ui/cubit/authCubit.dart';
 import 'package:letstalk/ui/widget/customCardWidget.dart';
-import 'package:letstalk/ui/widget/messageBox.dart';
+import 'package:letstalk/ui/widget/customMessageBox.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -53,10 +53,8 @@ class _LoginPageState extends State<LoginPage> {
                             prefixIcon: const Icon(
                               Icons.email_outlined,
                             )),
-                        onSaved: (email) {
-                          if (email != null) {
-                            _email = email;
-                          }
+                        onChanged: (email) {
+                          _email = email;
                         },
                       ),
                       const SizedBox(
@@ -79,10 +77,8 @@ class _LoginPageState extends State<LoginPage> {
                             prefixIcon: const Icon(
                               Icons.password,
                             )),
-                        onSaved: (password) {
-                          if (password != null) {
-                            _password = password;
-                          }
+                        onChanged: (password) {
+                          _password = password;
                         },
                       ),
                       Padding(
@@ -183,9 +179,10 @@ class _LoginPageState extends State<LoginPage> {
       }
     } else {
       const MessageBox(
-          content: "Email or password is incorrect",
-          icon: Icons.error_outline_rounded,
-          title: "Warning").show(context);
+              content: "Email or password is incorrect",
+              icon: Icons.error_outline_rounded,
+              title: "Warning")
+          .show(context);
     }
   }
 
@@ -193,8 +190,8 @@ class _LoginPageState extends State<LoginPage> {
     try {
       await context.read<AuthCubit>().signInWitGoogle();
     } on PlatformException catch (e) {
-      MessageBox(
-          content: e.code, icon: Icons.error, title: "An Error Occurred").show(context);
+      MessageBox(content: e.code, icon: Icons.error, title: "An Error Occurred")
+          .show(context);
     }
   }
 
@@ -202,8 +199,8 @@ class _LoginPageState extends State<LoginPage> {
     try {
       await context.read<AuthCubit>().signInWitFacebook();
     } on PlatformException catch (e) {
-      MessageBox(
-          content: e.code, icon: Icons.error, title: "An Error Occurred").show(context);
+      MessageBox(content: e.code, icon: Icons.error, title: "An Error Occurred")
+          .show(context);
     }
   }
 }
